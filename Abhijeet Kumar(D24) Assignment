@@ -1,0 +1,31 @@
+#Assignment
+Database = [["Nethaji", 1234], ["Yuvi", 3456], ["Abhijeet", 3437], ["Nandini", 4323]]
+print("Please login.")
+UserId = input("Please enter your UserID:")
+Password = int(input("Enter your 4 digit password:"))
+List = [UserId, Password]
+if  List in Database:
+  print("You logged in successfully", UserId)
+else:
+  print("Sorry, you are not registered. Please register.")
+  UserId = input("Please enter your name:")
+  Password  = int(input("Enter any 4 digit password:"))
+  List.extend([UserId, Password])
+  Database.append(List)
+  print("You registered/logged in successfully", UserId)
+Fullname = input("Please enter your full name:")  
+DOJ = input("Please enter your Date of Journey:")
+station1 = input("Boarding from:")
+station2 = input("Destination:")
+Tickets = int(input("Please enter no. of tickets:"))
+import random
+#Generate random numbers between 10 and 100
+Tickets_approved = random.sample(range(1, 100), Tickets)
+print(Tickets_approved)
+dict = {'Name': Fullname, 'Date of journey': DOJ, 'Boarding from': station1, 'Destination': station2, 'No.of tickets booked': Tickets, 'Seat nos. booked': Tickets_approved}
+x = input("Enter your full name to verify your booking details:")
+if x == Fullname:
+  print(dict)
+  print("Please continue for payments.")
+else:
+  print("Sorry, no details found.")
